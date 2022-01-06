@@ -1,0 +1,1 @@
+# LaskaKit SCD41 Senzor CO2, teploty a vlhkosti vzduchu
