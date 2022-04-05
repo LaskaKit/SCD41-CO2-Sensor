@@ -32,8 +32,7 @@ void setup()
       ;
   }
 
-  if (SCD41.startLowPowerPeriodicMeasurement() == true)
-  {
+  if (SCD41.startLowPowerPeriodicMeasurement() == true)  {
     Serial.println("Low power mode enabled.");
   }
 }
