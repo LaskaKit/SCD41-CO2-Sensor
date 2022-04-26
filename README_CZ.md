@@ -26,4 +26,4 @@ A jaké jsou parametry SCD41?
 
 Připravili jsme i vzorový FW, ten najdeš v této složce https://github.com/LaskaKit/SCD41-CO2-Sensor/tree/main/FW/SCD41_MeteoMini
 
-Konektor si můžeš zakoupit na https://www.laskakit.cz/laskakit-scd41-senzor-co2--teploty-a-vlhkosti-vzduchu/
+Modul s SCD41 si můžeš zakoupit na https://www.laskakit.cz/laskakit-scd41-senzor-co2--teploty-a-vlhkosti-vzduchu/
