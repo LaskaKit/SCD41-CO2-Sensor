@@ -1,5 +1,29 @@
+/* Sensirion SCD4x test with LaskaKit DEVkits
+ * example from GxEPD2 library is used
+ * 
+ * Board:   LaskaKit ESP32-DEVKit       https://www.laskakit.cz/laskakit-esp32-devkit/
+ *          or LaskaKit ESP32-S3-DEVKit https://www.laskakit.cz/laskakit-esp32-s3-devkit
+ * Sensor:  LaskaKit SCD41 Sensor CO2   https://www.laskakit.cz/laskakit-scd41-senzor-co2--teploty-a-vlhkosti-vzduchu/
+ * 
+ * Email:podpora@laskakit.cz
+ * Web:laskakit.cz
+ */
+
+// Display Library example for SPI e-paper panels from Dalian Good Display.
+// Requires Adafruit_GFX and https://github.com/ZinggJM/GxEPD2 Author: Jean-Marc Zingg
+// Display Library based on Demo Example from Good Display: http://www.e-paper-display.com/download_list/downloadcategoryid=34&isMode=false.html
 #include <SensirionI2CScd4x.h>
 #include <Wire.h>
+
+// SPI uSUP LaskaKit ESP32-DEVKit 
+#define SCL     22
+#define SDA     21
+#define POWER   2
+
+// SPI uSUP LaskaKit ESP32-S3-DEVKit 
+//#define SCL     2
+//#define SDA     42
+//#define POWER   47
 
 SensirionI2CScd4x scd4x;
 
@@ -24,8 +48,12 @@ void setup() {
     while (!Serial) {
         delay(100);
     }
+  
+    pinMode(POWER, OUTPUT);    // Set uSUP connector power transistor as output
+    digitalWrite(POWER, HIGH); // Turn power ON uSUP connector
+    delay(100);    
 
-    Wire.begin(21, 22); //21, 22
+    Wire.begin(SDA, SCL);
 
     uint16_t error;
     char errorMessage[256];
